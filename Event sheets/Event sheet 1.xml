@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-block sid="5767352316102405">
+            <conditions>
+                <condition id="3" name="On key released" sid="7912045862840127" type="Keyboard">
+                    <param id="0" name="Key">32 (VÄli)</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="8013899821356799" type="Player">
+                    <param id="0" name="Instance variable">FireRight</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="4110861402678401" type="Player">
+                    <param id="0" name="Instance variable">Bullets</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="1179160005750885" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="1356471531909159" type="Player">
+                    <param id="0" name="Animation">&quot;Fire&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="6014836117486792" type="Player">
+                    <param id="0" name="Object">Bullet</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">&quot;LeftGun&quot;</param>
+                </action>
+                <action id="-8" name="Set angle" sid="7451975348671005" type="Bullet">
+                    <param id="0" name="Angle">Player.Angle</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="30738626866786" type="Player">
+                    <param id="0" name="Instance variable">Bullets</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2159481844223606">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="774759134222017" type="Bullet">
+                    <param id="0" name="Object">Destroyable_item_with_invite_enemy</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="7821000536686632" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4388516635653308" type="Bullet" />
+                <action id="-12" name="Subtract from" sid="7776394807004459" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="8778174593085813">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="509524221510685" type="Bullet">
+                    <param id="0" name="Object">Wall_32</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="9656514640454603" type="Bullet">
+                    <param id="0" name="Object">Wall_64</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="3677741621440775" type="Bullet">
+                    <param id="0" name="Object">Wall_128</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="7731071792261931" type="Bullet">
+                    <param id="0" name="Object">Wall_256</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="4437344389819296" type="Bullet">
+                    <param id="0" name="Object">Wall_512</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2440015895440414" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="2674060522675799">
+            <conditions>
+                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="3083748811757678" type="Bullet">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Distance">450</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="2518567563079506" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7244904353902424" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="8199363557950308">
+            <conditions>
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="5284463183312946" type="EnemyWoman">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="7217807288690407" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="3295835004451009" type="EnemyWoman">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+                <action id="-17" name="Move forward" sid="7809378603400833" type="EnemyWoman">
+                    <param id="0" name="Distance">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6822849323275702">
+            <conditions>
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="9958904154997704" type="Man">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="3732635606197678" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="1170806810728729" type="Man">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+                <action id="-17" name="Move forward" sid="1600308802836434" type="Man">
+                    <param id="0" name="Distance">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8251647282968174">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="4288676410076973" type="EnemyWoman">
+                    <param id="0" name="Object">Bullet</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="9881344656300497" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="5847572666805174" type="EnemyWoman">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="764182084288939" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="6139098564396242">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1923724783638831" type="Bullet">
+                    <param id="0" name="Object">Man</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="3079059769904246" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="399335732922852" type="Man">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="4984144021589398" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="4578025065715086">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="5021087135634379" type="EnemyWoman">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="3686428443601829" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7041749231166501" type="EnemyWoman" />
+            </actions>
+        </event-block>
+        <event-block sid="9123249913245417">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="9738815926144854" type="Man">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="222892843236793" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="856602774820063" type="Man" />
+            </actions>
+        </event-block>
+        <event-block sid="7168631090545347">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6361894418905456" type="System" />
+                <condition id="-11" name="For Each" sid="7231637911940052" type="System">
+                    <param id="0" name="Object">Destroyable_item_with_invite_enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="6587599459481825" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Obstacle">Wall</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="7188691745061303" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Obstacle">Wall_128</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="9680696764874727" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Obstacle">Wall_256</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="7337137032792948" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Obstacle">Wall_32</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="2719744663814993" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Obstacle">Wall_512</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="6635530464639453" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Obstacle">Wall_64</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7810181410157222">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6808983375552919" type="System" />
+                <condition id="-11" name="For Each" sid="8600090781325048" type="System">
+                    <param id="0" name="Object">EnemyWoman</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="6373455991180064" type="EnemyWoman">
+                    <param id="0" name="Obstacle">Wall</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="2761536249442526" type="EnemyWoman">
+                    <param id="0" name="Obstacle">Wall_128</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="1511189991425803" type="EnemyWoman">
+                    <param id="0" name="Obstacle">Wall_256</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="3339924401138049" type="EnemyWoman">
+                    <param id="0" name="Obstacle">Wall_32</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="3165431886216253" type="EnemyWoman">
+                    <param id="0" name="Obstacle">Wall_512</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="5741727333053241" type="EnemyWoman">
+                    <param id="0" name="Obstacle">Wall_64</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4843800520214823">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6128133442066018" type="System" />
+                <condition id="-11" name="For Each" sid="8449722204214989" type="System">
+                    <param id="0" name="Object">Man</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="7585219750987993" type="Man">
+                    <param id="0" name="Obstacle">Wall</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="2862702596898061" type="Man">
+                    <param id="0" name="Obstacle">Wall_128</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="4025495960391671" type="Man">
+                    <param id="0" name="Obstacle">Wall_256</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="7531962877214709" type="Man">
+                    <param id="0" name="Obstacle">Wall_32</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="7198385037974138" type="Man">
+                    <param id="0" name="Obstacle">Wall_512</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="4455193776399555" type="Man">
+                    <param id="0" name="Obstacle">Wall_64</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4062563620894494">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="7256746764560266" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="6045589468263936" type="UIText">
+                    <param id="0" name="Text">&quot;Health: &quot; &amp;  round(Player.Health) &amp;&quot; Bullets: &quot; &amp; Player.Bullets &amp; &quot; Music Player left: &quot; &amp; Player.MusicPlayerCount</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8781140750457705">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="937352851964957" type="EnemyWoman">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="9676213613138612" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="577717496376419" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">0.1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7930547208522336">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="8065676417910139" type="Man">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="6727937938278289" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="8679813911506027" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">0.1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4897817689500254">
+            <conditions>
+                <condition id="2" name="Is playing" sid="8450590660514087" type="Player">
+                    <param id="0" name="Animation">&quot;Fire&quot;</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="2326967618833433" type="Player">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">3</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="586994673734944" type="Player">
+                    <param id="0" name="Instance variable">FireRight</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="8219384927465255" type="Player">
+                    <param id="0" name="Instance variable">Bullets</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="3364136486810681" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="2743155228697076" type="Player">
+                    <param id="0" name="Object">Bullet</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">&quot;RightGun&quot;</param>
+                </action>
+                <action id="-8" name="Set angle" sid="6507514920574642" type="Bullet">
+                    <param id="0" name="Angle">Player.Angle</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="2865997195778117" type="Player">
+                    <param id="0" name="Instance variable">Bullets</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="1914561024146754" type="Player">
+                    <param id="0" name="Instance variable">FireRight</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1163985918811619">
+            <conditions>
+                <condition id="2" name="Is playing" sid="1632092015237721" type="Player">
+                    <param id="0" name="Animation">&quot;Fire&quot;</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="1743736501252502" type="Player">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">4</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="4356754159040948" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="9290670293715755" type="Player">
+                    <param id="0" name="Instance variable">FireRight</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3428792470743868">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2333533410309411" type="Player">
+                    <param id="0" name="Object">Bullets</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="4740344440200252" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="8869996644284526" type="Bullets" />
+                <action id="-10" name="Set value" sid="7142281058352955" type="Player">
+                    <param id="0" name="Instance variable">Bullets</param>
+                    <param id="1" name="Value">Player.Bullets + 50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4437090755110267">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6866806609548377" type="Player">
+                    <param id="0" name="Object">Health</param>
+                </condition>
+                <condition id="-7" inverted="1" name="Compare instance variable" sid="2923940906916679" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">90</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="1062609514523782" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4962938715159845" type="Health" />
+                <action id="-10" name="Set value" sid="8155925822598459" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">Player.Health + 10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3858616491916821">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="1570734707018651" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="3935123671516811" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="1144935479078498" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8576903749039166">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="6624939297367163" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="8739211967962508" type="Player">
+                    <param id="0" name="Instance variable">Live</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="4911818301877961" type="Player" />
+                <action id="-16" name="Set opacity" sid="6910128735535375" type="DieText">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5436550135518951">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="1457754007960649" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="8837194080452455" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4858098859046655">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8908838366582249" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="6997111073277028" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="1988082523128051" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2519368317208255">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8121246906611449" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="5481896427253058" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="458550859405345" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Frame number">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2491705509343117">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8775158129794135" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="2723057674911836" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="5860134681635214" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Frame number">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="155677143098327">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="9363004063204384" type="Destroyable_item_with_invite_enemy">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3992475212641334" type="Destroyable_item_with_invite_enemy" />
+                <action id="-12" name="Subtract from" sid="7478360473498632" type="Player">
+                    <param id="0" name="Instance variable">MusicPlayerCount</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7169474311531413">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6812233014923995" type="System" />
+                <condition id="-11" name="For Each" sid="7597352895733793" type="System">
+                    <param id="0" name="Object">Destroyable_item_with_invite_enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="8626988087827701" type="Player">
+                    <param id="0" name="Instance variable">MusicPlayerCount</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="874847810392105">
+            <conditions>
+                <condition id="0" name="On clicked" sid="3851147782775951" type="Button" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="7731095169845011" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="2811059413705884" type="Button" />
+                <action id="-9" name="Destroy" sid="3059666926697239" type="Selitysteksti" />
+            </actions>
+        </event-block>
+        <event-block sid="8924274376328364">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8132863177486617" type="Player">
+                    <param id="0" name="Instance variable">MusicPlayerCount</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="459832021233853" type="Player">
+                    <param id="0" name="Instance variable">Game</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="3323330613027635" type="WinText">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
