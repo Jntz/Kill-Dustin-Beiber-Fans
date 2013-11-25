@@ -1,7 +1,7 @@
 Kill Dustin Beiber Fans!!!!
 ==========================
 
-2D topview shooting game. Developing started in Game Jam at Rovaniemi. This version is just prototype (made in 48 hours) so it's not have lot of content. The Main idea is destroy all Justin Bieber music in World. 
+2D topview shooting game. Developing started in Game Jam at Rovaniemi. This version is just prototype (made in 48 hours) so it's not have lot of content. The Main idea is destroy all Justin Bieber music in World. I used Construct 2 Game engine.
 
 Story:
 Main character have a problem. He look like same as Justin Bieber. Alltime when he going to out fans wants signature and hug him. One day character freaking out! He start to absurdly shoot allmost everything. 
